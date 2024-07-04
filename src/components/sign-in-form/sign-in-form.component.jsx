@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import "./sign-in-form.styles.scss";
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
-
 import {
   signInAuthUserWithEmailAndPassword,
   signInWithGooglePopup,
@@ -23,7 +22,7 @@ const SignInForm = () => {
 
   const logGoogleUser = async () => {
     try {
-      const { user } = await signInWithGooglePopup();
+      await signInWithGooglePopup();
     } catch (error) {
       console.log(error);
     }
@@ -33,14 +32,13 @@ const SignInForm = () => {
     event.preventDefault();
 
     try {
-      const response = await signInAuthUserWithEmailAndPassword(
+      const { user } = await signInAuthUserWithEmailAndPassword(
         email,
         password
       );
-      console.log(response);
       resetFormFields();
     } catch (error) {
-      if (error.code == "auth/invalid-credential") {
+      if (error.code === "auth/invalid-credential") {
         alert("Incorrect password or email");
       } else console.log(error);
     }
@@ -77,7 +75,7 @@ const SignInForm = () => {
           }}
         />
         <div className="buttons-container">
-          <Button type="button">Sign In</Button>
+          <Button type="submit">Sign In</Button>
           <Button onClick={logGoogleUser} buttonType="google" type="button">
             Google sign in
           </Button>
