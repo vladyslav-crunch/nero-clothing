@@ -5,10 +5,12 @@ import "./navigation.styles.scss";
 import { UserContext } from "../../../contexts/user.context";
 import { useContext } from "react";
 import { signOutUser } from "../../../utils/firebase/firebase.utils";
-
+import CartIcon from "../../cart-icon/cart-icon.component";
+import CartDropdown from "../../cart-dropdown/cart-dropdown.component";
+import { CartDropdownContext } from "../../../contexts/cart-dropdown.context";
 const Navigation = () => {
   const { currentUser } = useContext(UserContext);
-
+  const { isCartOpen } = useContext(CartDropdownContext);
   return (
     <Fragment>
       <div className="navigation">
@@ -28,7 +30,9 @@ const Navigation = () => {
               SING IN
             </Link>
           )}
+          <CartIcon />
         </div>
+        {isCartOpen && <CartDropdown />}
       </div>
       <Outlet />
     </Fragment>
