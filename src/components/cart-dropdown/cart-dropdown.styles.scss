@@ -21,10 +21,20 @@
     height: 240px;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow: auto;
   }
 
   button {
     margin-top: auto;
   }
+}
+
+::-webkit-scrollbar{
+  height: 4px;
+  width: 6px;
+  background: gray;
+}
+::-webkit-scrollbar-thumb:vertical{
+  background: #302f2f;
+  border-radius: 10px;
 }
