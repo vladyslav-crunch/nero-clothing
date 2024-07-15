@@ -20,3 +20,13 @@ a {
 *{
   box-sizing: border-box;
 }
+
+::-webkit-scrollbar{
+  height: 4px;
+  width: 6px;
+  background: gray;
+}
+::-webkit-scrollbar-thumb:vertical{
+  background: #302f2f;
+  border-radius: 10px;
+}
