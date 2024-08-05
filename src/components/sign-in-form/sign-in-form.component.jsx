@@ -1,10 +1,11 @@
 import { useState } from "react";
 import FormInput from "../form-input/form-input.component";
+import { useDispatch } from "react-redux";
 import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 import {
-  signInAuthUserWithEmailAndPassword,
-  signInWithGooglePopup,
-} from "../../utils/firebase/firebase.utils";
+  googleSignInStart,
+  emailSignInStart,
+} from "../../store/user/user.action";
 import { SignInContainer, ButtonsContainer } from "./sign-in-form.styles";
 const defaultFromFields = {
   email: "",
@@ -12,6 +13,7 @@ const defaultFromFields = {
 };
 
 const SignInForm = () => {
+  const dispatch = useDispatch();
   const [formFields, setFormFields] = useState(defaultFromFields);
   const { email, password } = formFields;
 
@@ -20,21 +22,14 @@ const SignInForm = () => {
   };
 
   const logGoogleUser = async () => {
-    try {
-      await signInWithGooglePopup();
-    } catch (error) {
-      console.log(error);
-    }
+    dispatch(googleSignInStart());
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const { user } = await signInAuthUserWithEmailAndPassword(
-        email,
-        password
-      );
+      dispatch(emailSignInStart(email, password));
       resetFormFields();
     } catch (error) {
       if (error.code === "auth/invalid-credential") {
