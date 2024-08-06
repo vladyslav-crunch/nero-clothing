@@ -9,7 +9,7 @@ import {
   selectCartItems,
   selectCartTotal,
 } from "../../store/cart/cart.selector";
-import { useContext } from "react";
+import PaymentForm from "../../components/payment-form/payment-form.component";
 import CheckoutItem from "../../components/checkout-item/checkout-item.component";
 const Checkout = () => {
   const cartItems = useSelector(selectCartItems);
@@ -36,7 +36,8 @@ const Checkout = () => {
       {cartItems.map((cartItem) => {
         return <CheckoutItem key={cartItem.id} cartItem={cartItem} />;
       })}
-      <Total>Total: {cartTotal}</Total>
+      <Total>Total: ${cartTotal}</Total>
+      <PaymentForm />
     </CheckoutContainer>
   );
 };
