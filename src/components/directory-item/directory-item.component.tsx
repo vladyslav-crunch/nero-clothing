@@ -3,10 +3,19 @@ import {
   Body,
   DirectoryItemContainer,
 } from "./directory-item.style";
-
+import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 
-const DirectoryItem = ({ category }) => {
+type DirectoryProps = {
+  category: {
+    id: number;
+    title: string;
+    imageUrl: string;
+    route: string;
+  };
+};
+
+const DirectoryItem: FC<DirectoryProps> = ({ category }) => {
   const { imageUrl, title, route } = category;
   const navigate = useNavigate();
 
@@ -14,7 +23,7 @@ const DirectoryItem = ({ category }) => {
 
   return (
     <DirectoryItemContainer onClick={onNavigateHandler}>
-      <BackgroundImage imageurl={imageUrl} />
+      <BackgroundImage imageUrl={imageUrl} />
       <Body>
         <h2>{title}</h2>
         <p>Shop Now</p>

@@ -5,6 +5,7 @@ import { ReactComponent as CrwnLogo } from "../../assets/crown.svg";
 import {
   NavigationContainer,
   NavLink,
+  NavSpan,
   LogoContainer,
   NavLinks,
 } from "./navigation.styles";
@@ -29,9 +30,7 @@ const Navigation = () => {
         <NavLinks>
           <NavLink to="/shop">SHOP</NavLink>
           {currentUser ? (
-            <NavLink as="span" onClick={signOutUser}>
-              SIGN OUT
-            </NavLink>
+            <NavSpan onClick={signOutUser}>SIGN OUT</NavSpan>
           ) : (
             <NavLink to="/auth">SING IN</NavLink>
           )}
