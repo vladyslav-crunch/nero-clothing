@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Fragment } from "react";
-import { ReactComponent as CrwnLogo } from "../../assets/crown.svg";
+import { ReactComponent as NeroLogo } from "../../assets/nero.svg";
 import {
   NavigationContainer,
   NavLink,
@@ -25,7 +25,8 @@ const Navigation = () => {
     <Fragment>
       <NavigationContainer>
         <LogoContainer to="/">
-          <CrwnLogo />
+          <NeroLogo />
+          <p>NERO-CLOTHING</p>
         </LogoContainer>
         <NavLinks>
           <NavLink to="/shop">SHOP</NavLink>
