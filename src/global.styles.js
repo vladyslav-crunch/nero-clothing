@@ -1,3 +1,6 @@
+import { createGlobalStyle } from "styled-components";
+
+export const GlobalStyle = createGlobalStyle`
 body {
   margin: 0;
   font-family: 'Barlow Condensed';
@@ -30,3 +33,4 @@ a {
   background: #302f2f;
   border-radius: 10px;
 }
+`;
