@@ -1,4 +1,4 @@
-# 🛍️ Clothing Shop – React E-Commerce App
+# 🛍️ Nero Clothing – React E-Commerce App
 
 A modern clothing shop built with **React** and **Redux**, designed to provide a smooth and stylish shopping experience. This project showcases dynamic product listings, cart functionality, and a sleek UI for an online fashion store.
 
@@ -12,7 +12,7 @@ A modern clothing shop built with **React** and **Redux**, designed to provide a
 
 - **Frontend**: React, React Router, Redux
 - **Styling**:  Styled Components / SCSS
-- **Optional**: Firebase / Node.js backend / MongoDB / Stripe API
+- **Backend/Database**: Firebase Authentication, Firestore (NoSQL database)
 
 ## 📦 Getting Started
 
@@ -28,7 +28,29 @@ cd clothing-shop
 npm install
 ```
 
-### 3. Run the app
+### 3. Set up Firebase
+
+Create a Firebase project at Firebase Console, enable Authentication (e.g. Email/Password), and Firestore.
+
+Add your Firebase config to the project (e.g., in a firebase.utils.ts file):
+
+```
+import { initializeApp } from 'firebase/app';
+
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+
+const app = initializeApp(firebaseConfig);
+export default app;
+
+```
+### 4. Run the app
 ```
 npm start
 ```
