@@ -6,13 +6,16 @@ A modern clothing shop built with **React** and **Redux**, designed to provide a
 
 - 🧥 Browse a clothing products
 - 🛒 Add to cart / remove from cart
-- 🔐 User authentication 
+- 🔐 User authentication with Firebase
+- ☁️ Product data stored and fetched from Firestore
+- 💳 Secure Checkout with Stripe
 
 ## 🛠️ Tech Stack
 
 - **Frontend**: React, React Router, Redux
 - **Styling**:  Styled Components / SCSS
 - **Backend/Database**: Firebase Authentication, Firestore (NoSQL database)
+- **Payments**: Stripe Checkout Integration
 
 ## 📦 Getting Started
 
