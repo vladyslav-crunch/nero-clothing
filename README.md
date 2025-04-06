@@ -1,4 +1,4 @@
-# 🛍️ Clothing Shop – React E-Commerce App
+# 🛍️ Nero Clothing – React E-Commerce App
 
 A modern clothing shop built with **React** and **Redux**, designed to provide a smooth and stylish shopping experience. This project showcases dynamic product listings, cart functionality, and a sleek UI for an online fashion store.
 
