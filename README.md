@@ -21,3 +21,18 @@ A modern, responsive clothing shop built with **React** and **Redux**, designed 
 ```bash
 git clone https://github.com/yourusername/clothing-shop.git
 cd clothing-shop
+```
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Run the app
+```
+npm start
+```
+The app will be available at http://localhost:3000.
+
+### 🤝 Contributing
+Pull requests are welcome! For major changes, please open an issue first to discuss what you'd like to change.
