@@ -35,7 +35,7 @@ npm install
 
 Create a Firebase project at Firebase Console, enable Authentication (e.g. Email/Password), and Firestore.
 
-Add your Firebase config to the project (e.g., in a firebase.utils.ts file):
+Add your Firebase config to the project (in a firebase.utils.ts file):
 
 ```
 import { initializeApp } from 'firebase/app';
